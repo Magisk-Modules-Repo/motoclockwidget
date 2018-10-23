@@ -11,6 +11,10 @@ Add Motorola Clock Widget systemlessly
 * Deivid_21 @xda-developers
 * dark-basic
 
+## Tested
+* Moto X Play
+* Although in theory should work on any android. since I'm running it in Lineage 14.1
+
 ## Changelog 
 * Initial Release v3.5
 
