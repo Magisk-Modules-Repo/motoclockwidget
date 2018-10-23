@@ -43,9 +43,9 @@ print_modname() {
   ui_print "*****************************************"
   ui_print "*         Moto Clock Widget             *"
   ui_print "*           Version 3.5                 *"
-  ui_print "*          By dark-basic                *"
-  ui_print "*      Here goes the installer   :D     *"
-  ui_print "*        RUN Installer, RUN!            *"
+  ui_print "*           By Deivid_21                *"
+  ui_print "*        Module by dark-basic           *"
+  ui_print "*    Running Installer, Wait Please     *"
   ui_print "*****************************************"
 }
 
