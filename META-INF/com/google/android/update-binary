@@ -59,8 +59,7 @@ mount_partitions
 # Detect version and architecture
 api_level_arch_detect
 
-ui_print "- Device platform: $ARCH"
-
+ui_print "- Your Android API is: $API"
 [ $API -lt 24 ] && abort "! Moto Clock is only for Nougat and above (7.x.x+) (SDK 24+)"
 
 
