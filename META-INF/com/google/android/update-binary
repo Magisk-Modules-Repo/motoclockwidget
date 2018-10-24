@@ -59,8 +59,9 @@ mount_partitions
 # Detect version and architecture
 api_level_arch_detect
 
+ui_print "- Verifying the Android API version"
 ui_print "- Your Android API is: $API"
-[ $API -lt 24 ] && abort "! Moto Clock is only for Nougat and above (7.x.x+) (SDK 24+)"
+[ $API -lt 24 ] && abort "! Moto Clock is only for Nougat and above (7.*.*+) (SDK 24+)"
 
 
 # You can get the Android API version from $API, the CPU architecture from $ARCH
@@ -88,6 +89,11 @@ MODPATH=$MOUNTPATH/$MODID
 
 # Print mod name
 print_modname
+
+# CORRECT API IS NOTIFIED
+ui_print "******************************"
+ui_print "    Starting Installation     "
+ui_print "******************************"
 
 # Please leave this message in your flashable zip for credits :)
 ui_print "******************************"
