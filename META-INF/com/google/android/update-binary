@@ -61,7 +61,7 @@ api_level_arch_detect
 
 ui_print "- Verifying the Android API version"
 ui_print "- Your Android API is: $API"
-[ $API -lt 23 ] && abort "! Moto Clock is only for Marshmallow and above (6.*.*+) (SDK 23+)"
+[ $API -lt 22 ] && abort "! Moto Clock is only for Lollipod (5.1.1+) and above (SDK 22+)"
 
 
 # You can get the Android API version from $API, the CPU architecture from $ARCH
