@@ -1,7 +1,7 @@
 id=motoclockwidget
 name=Moto Clock Widget
-version=v3.5.1
-versionCode=8
+version=v3.5.5
+versionCode=9
 author=Deivid_21 & dark-basic
 description=Add Motorola Clock Widget systemlessly
 minMagisk=17000
