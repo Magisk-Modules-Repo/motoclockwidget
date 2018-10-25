@@ -6,7 +6,7 @@ Add Motorola Clock Widget systemlessly
 
 ## Requirements
 * Magisk v17.0 or higher
-* Android 6.0 or higher
+* Android 5.1.1 or higher
 * Know what to do if a bootloop occurs
 
 
@@ -17,11 +17,19 @@ Add Motorola Clock Widget systemlessly
 * <a href="https://forum.xda-developers.com/member.php?u=7922511">dark-basic</a> @xda-developers <br> 
 * <a href="https://forum.xda-developers.com/member.php?u=7201331">Deivid_21</a>  @xda-developers <br> 
 
+## Official Module Thread
+* <a href="https://forum.xda-developers.com/apps/magisk/module-moto-clock-widget-t3858180">[MODULE] Moto Clock Widget</a>   <br>
+
+
+
 ## Tested
 * Moto X Play
 * Although in theory should work on any android. since I'm running it in Lineage 14.1
 
 ## Changelog 
+* v. 3.5.5 <br>
+ Modifications to support the app from Android 5.1.1
+
 * v. 3.5.1 <br>
 Support for Android 6 
 
