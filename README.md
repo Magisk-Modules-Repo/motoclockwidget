@@ -28,7 +28,7 @@ Add Motorola Clock Widget systemlessly
 
 ## Changelog 
 * v. 3.5.5 <br>
- Modifications to support the app from Android 5.1.1
+ Support for Android 5.1.1 or above
 
 * v. 3.5.1 <br>
 Support for Android 6 
