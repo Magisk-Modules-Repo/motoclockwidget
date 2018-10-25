@@ -6,7 +6,7 @@ Add Motorola Clock Widget systemlessly
 
 ## Requirements
 * Magisk v17.0 or higher
-* Android 7.0 or higher
+* Android 6.0 or higher
 * Know what to do if a bootloop occurs
 
 
@@ -22,7 +22,11 @@ Add Motorola Clock Widget systemlessly
 * Although in theory should work on any android. since I'm running it in Lineage 14.1
 
 ## Changelog 
-* Initial Release v3.5
+* v. 3.5.1 <br>
+Support for Android 6 
+
+*  v3.5 <br>
+Initial Release
 
    
 
