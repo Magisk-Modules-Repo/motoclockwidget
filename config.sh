@@ -42,7 +42,7 @@ LATESTARTSERVICE=false
 print_modname() {
   ui_print "*****************************************"
   ui_print "*         Moto Clock Widget             *"
-  ui_print "*           Version 3.5                 *"
+  ui_print "*           Version 3.5.1               *"
   ui_print "*          By Deivid_21                 *"
   ui_print "*      Module by dark-basic             *"
   ui_print "*****************************************"
