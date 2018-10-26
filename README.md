@@ -27,6 +27,9 @@ Add Motorola Clock Widget systemlessly
 * Although in theory should work on any android. since I'm running it in Lineage 14.1
 
 ## Changelog 
+* v. 3.5.6 <br>
+ Update Permissions
+
 * v. 3.5.5 <br>
  Support for Android 5.1.1 or above
 
