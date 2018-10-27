@@ -40,12 +40,12 @@ LATESTARTSERVICE=false
 # Set what you want to show when installing your mod
 
 print_modname() {
-  ui_print "*****************************************"
-  ui_print "*         Moto Clock Widget             *"
-  ui_print "*           Version 3.5.6               *"
-  ui_print "*          By Deivid_21                 *"
-  ui_print "*      Module by dark-basic             *"
-  ui_print "*****************************************"
+  ui_print "**********************************"
+  ui_print "*    Moto Clock Widget v3.5      *"
+  ui_print "*        By Deivid_21            *"
+  ui_print "*     Module  Version 1.5        *"
+  ui_print "*    Module by dark-basic        *"
+  ui_print "**********************************"
 }
 
 
