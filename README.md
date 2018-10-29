@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://dl2.pushbulletusercontent.com/JDZ9lOS5noyBl9oKDEnxIT2glUpo54Zf/motorola3.jpg" height="150" width="550" alt="Screenshot">
+<img src="https://dl2.pushbulletusercontent.com/JDZ9lOS5noyBl9oKDEnxIT2glUpo54Zf/motorola3.jpg" height="100" width="300" alt="Screenshot">
 </br>
 Moto Clock Widget
 
