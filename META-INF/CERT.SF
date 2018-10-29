@@ -1,0 +1,86 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: XVtmUQ3b4UaC5ldXpv3bFFYlGwc=
+Created-By: 1.0 (Android SignApk)
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest-Manifest: pVUJ9D5th6d2sD8aeNp5zhiBUcs=
+
+Name: common/unityfiles/util_functions.sh
+SHA1-Digest-Manifest: tGtk7bdZRxT3ohGmFPPvEYiDNg4=
+
+Name: common/unityfiles/avb/verity.x509.pem
+SHA1-Digest-Manifest: 1jkFP/yqpi6hX92hamIcvElIn2E=
+
+Name: common/unityfiles/chromeos/kernel.keyblock
+SHA1-Digest-Manifest: kKSe84AJEoA7Balkzd+Xkb3vi4w=
+
+Name: system/etc/permissions/privapp-permissions-com.oasisfeng.greenif
+ y.xml
+SHA1-Digest-Manifest: kMsl9emDh8Yl6ARKC/BD/2jzw4g=
+
+Name: common/service.sh
+SHA1-Digest-Manifest: Ryw8cxDa46xEeTL2v/eeeJ1QKB4=
+
+Name: common/unityfiles/chromeos/futility
+SHA1-Digest-Manifest: jbw7yDSjF2uQ0ZfLXnmYplpnyHI=
+
+Name: config.sh
+SHA1-Digest-Manifest: dU1uwbm17V7deR0BaM4xfSE5z7M=
+
+Name: common/post-fs-data.sh
+SHA1-Digest-Manifest: VtKBEhht61kydxikJQD27q4v6gw=
+
+Name: common/unityfiles/x86/magiskinit
+SHA1-Digest-Manifest: Nz/GOrfjyuYQYxP8Go2EPv+nK8M=
+
+Name: system/priv-app/Greenify/Greenify.apk
+SHA1-Digest-Manifest: GzIVQfd3OZep3HQKTINYzAaje/s=
+
+Name: LICENSE
+SHA1-Digest-Manifest: DhWoiphtSeQs2NE4z3WhxSDhYJ4=
+
+Name: common/unityfiles/arm/magiskinit
+SHA1-Digest-Manifest: Ugb0y+yVAnWgeB7IAfu8LtwuVtM=
+
+Name: common/unityfiles/avb/BootSignature_Android.jar
+SHA1-Digest-Manifest: qFpiJMuSczcVSkIxWkAYDh5DONs=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest-Manifest: v0OxqzR0gEdmw26h5lAPM/hKSYs=
+
+Name: common/system.prop
+SHA1-Digest-Manifest: HbzvC3Tyik76s7nzWE6amQuJyXg=
+
+Name: common/unityfiles/avb/verity.pk8
+SHA1-Digest-Manifest: psY8t9ktd/Y/5SPi/jOebPI6wFw=
+
+Name: common/unityfiles/modidsysover.sh
+SHA1-Digest-Manifest: TzqpvGfonAVEPEle9FhKo1kEtbg=
+
+Name: README.md
+SHA1-Digest-Manifest: 9x8WoSwtdO8n7TYyj2fVQOUkg5Q=
+
+Name: common/unityfiles/addon.sh
+SHA1-Digest-Manifest: AvO96xSWml34Blq5pVM0afBM19k=
+
+Name: module.prop
+SHA1-Digest-Manifest: M9rL8icWWUU1aiNzw4L49cOJrUk=
+
+Name: common/unityfiles/modid.sh
+SHA1-Digest-Manifest: bnNlh+MP55vhyaFgyornPf7OCOI=
+
+Name: common/uninstall.sh
+SHA1-Digest-Manifest: sWS2ijW3EZjVAQA2jiATGPOsYBA=
+
+Name: common/unityfiles/x86/magiskboot
+SHA1-Digest-Manifest: Sf/ddxpfRVbS9OeEI2ZIpg9urVY=
+
+Name: common/install.sh
+SHA1-Digest-Manifest: tDiYM4vDnE/2rZUzit9XR1J6nAo=
+
+Name: common/unityfiles/chromeos/kernel_data_key.vbprivk
+SHA1-Digest-Manifest: dCDRhI8tCKdqfVx7nO5o1EFgcUQ=
+
+Name: common/unityfiles/arm/magiskboot
+SHA1-Digest-Manifest: Jg7wBo8icuvAilnOdjKSv7kcd0Q=
+
