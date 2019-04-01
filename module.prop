@@ -1,7 +1,6 @@
 id=motoclockwidget
 name=Moto Clock Widget
-version=v1.6
-versionCode=12
+version=v2.0
+versionCode=20
 author=Deivid_21, dark-basic
-description=A simple module to add Motorola Clock Widget systemlessly.
-minMagisk=17000
+description=Systemless install Motorola Clock widget
