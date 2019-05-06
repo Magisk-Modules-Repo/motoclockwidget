@@ -180,40 +180,42 @@ find_block() {
   return 1
 }
 
+mount_part() {
+  local PART=$1
+  local POINT=/${PART}
+  [ -L $POINT ] && rm -f $POINT
+  mkdir $POINT 2>/dev/null
+  is_mounted $POINT && return
+  ui_print "- Mounting $PART"
+  mount -o rw $POINT 2>/dev/null
+  if ! is_mounted $POINT; then
+    local BLOCK=`find_block $PART$SLOT`
+    mount -o rw $BLOCK $POINT
+  fi
+  is_mounted $POINT || abort "! Cannot mount $POINT"
+}
+
 mount_partitions() {
   # Check A/B slot
   SLOT=`grep_cmdline androidboot.slot_suffix`
   if [ -z $SLOT ]; then
-    SLOT=_`grep_cmdline androidboot.slot`
-    [ $SLOT = "_" ] && SLOT=
+    SLOT=`grep_cmdline androidboot.slot`
+    [ -z $SLOT ] || SLOT=_${SLOT}
   fi
   [ -z $SLOT ] || ui_print "- Current boot slot: $SLOT"
 
-  ui_print "- Mounting /system, /vendor"
-  mkdir /system 2>/dev/null
-  [ -f /system/build.prop ] || is_mounted /system || mount -o rw /system 2>/dev/null
-  if ! is_mounted /system && ! [ -f /system/build.prop ]; then
-    SYSTEMBLOCK=`find_block system$SLOT`
-    mount -o rw $SYSTEMBLOCK /system
-  fi
-  [ -f /system/build.prop ] || is_mounted /system || abort "! Cannot mount /system"
-  grep -qE '/dev/root|/system_root' /proc/mounts && SYSTEM_ROOT=true || SYSTEM_ROOT=false
-  if [ -f /system/init ]; then
+  mount_part system
+  if [ -f /system/init.rc ]; then
     SYSTEM_ROOT=true
+    [ -L /system_root ] && rm -f /system_root
     mkdir /system_root 2>/dev/null
     mount --move /system /system_root
     mount -o bind /system_root/system /system
+  else
+    grep -qE '/dev/root|/system_root' /proc/mounts && SYSTEM_ROOT=true || SYSTEM_ROOT=false
   fi
-  $SYSTEM_ROOT && { ui_print "- Device is system-as-root"; ROOT=/system_root; }
-  if [ -L /system/vendor ]; then
-    mkdir /vendor 2>/dev/null
-    is_mounted /vendor || mount -o rw /vendor 2>/dev/null
-    if ! is_mounted /vendor; then
-      VENDORBLOCK=`find_block vendor$SLOT`
-      mount -o rw $VENDORBLOCK /vendor
-    fi
-    is_mounted /vendor || abort "! Cannot mount /vendor"
-  fi
+  [ -L /system/vendor ] && mount_part vendor
+  $SYSTEM_ROOT && ui_print "- Device is system-as-root"
 }
 
 api_level_arch_detect() {
@@ -275,9 +277,9 @@ set_vars() {
   [ $API -lt 26 ] && DYNLIB=false
   $DYNLIB && { LIBPATCH="\/vendor"; LIBDIR=$VEN; } || { LIBPATCH="\/system"; LIBDIR=/system; }  
   if $MAGISK; then
-    imageless_magisk && MOUNTEDROOT=$NVBASE/modules/$MODID || MOUNTEDROOT=$MAGISKTMP/img/$MODID
+    imageless_magisk && MOUNTEDROOT=$NVBASE/modules || MOUNTEDROOT=$MAGISKTMP/img
     if $BOOTMODE; then
-      MOD_VER="$MOUNTEDROOT/module.prop"
+      MOD_VER="$MOUNTEDROOT/$MODID/module.prop"
       ORIGDIR="$MAGISKTMP/mirror"
     else
       MOD_VER="$MODPATH/module.prop"
@@ -297,7 +299,7 @@ set_vars() {
       elif [ -e "$(find /data /cache -name supersu_is_here | head -n1)" ]; then
         SHEBANG="#!/su/bin/sush"; ROOTTYPE="Systemless SuperSU"
         NVBASE=$(dirname `find /data /cache -name supersu_is_here | head -n1` 2>/dev/null)/su.d
-      elif [ -d /system/su ] || [ -f /system/xbin/daemonsu ] || [ -f /system/xbin/sugote ] || [ -f /system/xbin/su ]; then
+      elif [ -d /system/su ] || [ -f /system/xbin/daemonsu ] || [ -f /system/xbin/sugote ]; then
         NVBASE=/system/su.d; ROOTTYPE="System SuperSU"
       elif [ -f /system/xbin/su ]; then
         [ "$(grep "SuperSU" /system/xbin/su)" ] && { NVBASE=/system/su.d; ROOTTYPE="System SuperSU"; } || ROOTTYPE="LineageOS SU"
@@ -413,7 +415,7 @@ patch_script() {
     sed -i "4i $i=$(eval echo \$$i)" $1
   done
   if $MAGISK; then
-    sed -i -e "s|\$MODPATH|$MOUNTEDROOT|g" -e "s|\$MOUNTPATH|$(basename $MOUNTEDROOT)|g" -e "s|\$MODULEROOT|$(basename $MOUNTEDROOT)|g" -e "11i INFO=$MOUNTEDROOT/$MODID-files" $1
+    sed -i -e "s|\$MODPATH|$MOUNTEDROOT/$MODID|g" -e "s|\$MOUNTPATH|$MOUNTEDROOT|g" -e "s|\$MODULEROOT|$MOUNTEDROOT|g" -e "11i INFO=$MOUNTEDROOT/$MODID/$MODID-files" $1
   else
     sed -i -e "s|\$MODPATH||g" -e "s|\$MOUNTPATH||g" -e "s|\$MODULEROOT||g" -e "11i INFO=$INFO" $1
   fi
@@ -602,7 +604,7 @@ unity_install() {
     fi
     cp -af $TMPDIR/module.prop $MODPATH/module.prop
     # Update info for magisk manager
-    $BOOTMODE && { rm -f $MOUNTEDROOT/remove; mktouch $MOUNTEDROOT/update; cp_ch -n $TMPDIR/module.prop $MOUNTEDROOT/module.prop; }
+    $BOOTMODE && { rm -f $MOUNTEDROOT/$MODID/remove; mktouch $MOUNTEDROOT/$MODID/update; cp_ch -n $TMPDIR/module.prop $MOUNTEDROOT/$MODID/module.prop; }
   elif [ "$NVBASE" == "/system/etc/init.d" ]; then
     ui_print " "
     ui_print "   ! This root method has no boot script support !"
@@ -638,7 +640,7 @@ unity_uninstall() {
   if $MAGISK; then
     rm -rf $MODPATH
     if $BOOTMODE; then
-      [ -d $MOUNTEDROOT/system ] && touch $MOUNTEDROOT/remove || rm -rf $MOUNTEDROOT
+      [ -d $MOUNTEDROOT/$MODID/system ] && touch $MOUNTEDROOT/$MODID/remove || rm -rf $MOUNTEDROOT/$MODID
     fi
   fi
 
