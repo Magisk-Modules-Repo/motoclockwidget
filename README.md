@@ -8,6 +8,11 @@ Systemless install Motorola Clock widget
 
 ---
 ## Changelog
+### v2.2
+- Fix Error in Unity v4.1
+### v2.1
+- Update to Unity v4.1
+- More compatibility with Magisk v.19.1
 ### v2.0
 - Update to Unity v4.0
 
