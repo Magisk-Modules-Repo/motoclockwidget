@@ -1,4 +1,4 @@
-# Motorola Clock Widget
+# Motorola Clock Widget Legacy
 Systemless install Motorola Clock widget
 
 ## Links
