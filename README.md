@@ -8,6 +8,9 @@ Systemless install Motorola Clock widget
 
 ---
 ## Changelog
+### v2.4
+- The changes of version 2.3 have been reverted
+- Rename the module. Since possibly throw another one to prevent this from happening again.
 ### v2.3
 - Added version of Moto Clock that works only with Android Oreo and Pie (so the size of the module increases.)
 - Thanks to the contributor @ MarcAnt01, the module is able to detect the android version and install the Moto Clock compatible with it.
