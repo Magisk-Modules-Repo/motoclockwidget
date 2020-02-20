@@ -7,6 +7,8 @@ Systemless install Motorola Clock widget
 
 ---
 ## Changelog
+WARNING: At the moment I do not recommend installing on Android 10. I am solving some compatibility problems that are not allowing the module to load properly in this version
+
 ### v10
 - Update the App to 1.04.10
 - Unity Installer has be deleted
