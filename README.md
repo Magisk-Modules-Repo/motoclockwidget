@@ -33,5 +33,7 @@ If you have these Android Version you can install [this version (2.4)](https://g
 ## Contributors and Credits
 - [Deivid_21](https://forum.xda-developers.com/member.php?u=7201331) @ xda-developers
 - [dark-basic](https://forum.xda-developers.com/member.php?u=7922511) @ xda-developers
-- TeamDeluxe Dev
+- [TeamDeluxe](https://t.me/TeamDeluxeComunity) @telegram
+
+Bugs report in TeamDeluxe - Telegram @darkbasic
 
