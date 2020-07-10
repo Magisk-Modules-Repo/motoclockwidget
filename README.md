@@ -10,7 +10,7 @@ Systemless install Motorola Clock widget
 ### v10.2
 - Added MMT-EX installer
 - The changes made in v.10 have been reversed at the moment, so the previous versions of android are made compatible again. This is only temporary, until the faults present in the current base used in the app are repaired.
-- In theory with this version, Android 10 should work correctly, if not, please let me know my telegram @darkbasic.
+- This version not working in Android 10. :C (New version in process. Compatibility with Android 10. (Android 5 to 7 will be discontinued)
 ### v10
 - Update the App to 1.04.10
 - Unity Installer has be deleted
