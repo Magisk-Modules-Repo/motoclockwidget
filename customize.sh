@@ -11,8 +11,8 @@
 # Uncomment and change 'MINAPI' and 'MAXAPI' to the minimum and maximum android version for your mod
 # Uncomment DYNLIB if you want libs installed to vendor for oreo+ and system for anything older
 # Uncomment DEBUG if you want full debug logs (saved to /sdcard)
-MINAPI=26
-MAXAPI=29
+MINAPI=22
+MAXAPI=28
 #DYNLIB=true
 #DEBUG=true
 
